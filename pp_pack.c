@@ -2272,6 +2272,7 @@ S_pack_rec(pTHX_ SV *cat, tempsym_t* symptr, SV **beglist, SV **endlist )
                     break;		/* No way to continue */
             }
             items = endlist - beglist;
+            lookahead = *symptr->previous;
             lookahead.flags  = symptr->flags & ~group_modifiers;
             LEAVE;
             goto no_change;
